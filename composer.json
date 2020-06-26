@@ -12,5 +12,10 @@
             "name": "Jake Dennison",
             "email": "srt4rulez@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "srt4rulez\\": "src/"
+        }
+    }
 }
