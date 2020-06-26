@@ -1,0 +1,16 @@
+{
+    "name": "srt4rulez/monolog-tracy-bar-dump-handler",
+    "description": "Monolog handler that logs to Tracy's barDump method.",
+    "type": "library",
+    "require": {
+        "monolog/monolog": "^2.0",
+        "tracy/tracy": "^2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jake Dennison",
+            "email": "srt4rulez@gmail.com"
+        }
+    ]
+}
