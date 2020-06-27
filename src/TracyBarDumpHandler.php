@@ -18,7 +18,7 @@ class TracyBarDumpHandler extends AbstractProcessingHandler
      *
      * @param int   $level
      * @param bool  $bubble
-     * @param array $options Options for barDump method.
+     * @param array $options options for barDump method
      */
     public function __construct($level = Logger::DEBUG, bool $bubble = true, array $options = [])
     {
@@ -28,7 +28,7 @@ class TracyBarDumpHandler extends AbstractProcessingHandler
     }
 
     /**
-     * @inheritDoc
+     * {@inheritdoc}
      */
     protected function write(array $record): void
     {

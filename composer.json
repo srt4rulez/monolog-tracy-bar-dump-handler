@@ -21,5 +21,18 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16"
+    },
+    "scripts": {
+        "cs":     "./vendor/bin/php-cs-fixer fix --verbose --diff --show-progress=dots --ansi --dry-run",
+        "cs:fix": "./vendor/bin/php-cs-fixer fix --verbose --diff --show-progress=dots --ansi",
+        "lint": [
+            "@cs"
+        ],
+        "lint:fix": [
+            "@cs:fix"
+        ]
     }
 }

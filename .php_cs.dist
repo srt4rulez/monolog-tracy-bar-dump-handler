@@ -1,0 +1,55 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->files()
+    ->in(__DIR__ . '/src')
+;
+
+$rules = [
+    /*
+     * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.15/src/RuleSet.php#L33
+     */
+    '@PSR2' => true,
+    /*
+     * @see https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/2.15/src/RuleSet.php#L59
+     */
+    '@Symfony' => true,
+    // Concatenation should be spaced according configuration.
+    'concat_space' => ['spacing'=>'one'],
+    // PHP arrays should be declared using the configured syntax.
+    'array_syntax' => ['syntax'=>'short'],
+    // Annotations in PHPDoc should be ordered so that `@param` annotations come first, then `@throws` annotations, then `@return` annotations.
+    'phpdoc_order' => true,
+    // Class names should match the file name.
+    'psr4' => true,
+    // Binary operators should be surrounded by space as configured.
+    'binary_operator_spaces' => false,
+    // Write conditions in Yoda style (`true`), non-Yoda style (`false`) or ignore those conditions (`null`) based on configuration.
+    'yoda_style' => false,
+    // Configured annotations should be omitted from PHPDoc.
+    'general_phpdoc_annotation_remove' => ['annotations'=>['author']],
+    // Removes extra blank lines after summary and after description in PHPDoc.
+    'phpdoc_trim_consecutive_blank_line_separation' => true,
+    // Each line of multi-line DocComments must have an asterisk [PSR-5] and must be aligned with the first one.
+    'align_multiline_comment' => true,
+    // Each element of an array must be indented exactly once.
+    'array_indentation' => true,
+    // DocBlocks must start with two asterisks, multiline comments must start with a single asterisk, after the opening slash. Both must end with a single asterisk before the closing slash.
+    'multiline_comment_opening_closing' => true,
+    // Forbid multi-line whitespace before the closing semicolon or move the semicolon to the new line for chained calls.
+    'multiline_whitespace_before_semicolons' => ['strategy'=>'new_line_for_chained_calls'],
+    // Method chaining MUST be properly indented. Method chaining with different levels of indentation is not supported.
+    'method_chaining_indentation' => true,
+    // There should not be useless else cases.
+    'no_useless_else' => null,
+    // Removes @param, @return and @var tags that don't provide any useful information.
+    'no_superfluous_phpdoc_tags' => null,
+    // PHPDoc summary should end in either a full stop, exclamation mark, or question mark.
+    'phpdoc_summary' => false,
+];
+
+return PhpCsFixer\Config::create()
+    ->setRiskyAllowed(true)
+    ->setRules($rules)
+    ->setFinder($finder)
+;
