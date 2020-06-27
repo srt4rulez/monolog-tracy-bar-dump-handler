@@ -32,9 +32,6 @@ class TracyBarDumpHandler extends AbstractProcessingHandler
      */
     protected function write(array $record): void
     {
-        $title   = $record['message'];
-        $context = $record['context'] ?: [];
-
-        Debugger::barDump($context, $title, $this->options);
+        Debugger::barDump($record, $record['message'], $this->options);
     }
 }
