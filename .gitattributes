@@ -80,3 +80,4 @@
 .gitignore     export-ignore
 .php_cs.dist   export-ignore
 .editorconfig  export-ignore
+/assets        export-ignore
