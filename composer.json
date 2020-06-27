@@ -3,6 +3,7 @@
     "description": "Monolog handler that logs to Tracy's barDump method.",
     "type": "library",
     "require": {
+        "php": ">=7.2.5",
         "monolog/monolog": "^2.0",
         "tracy/tracy": "^2.0"
     },
@@ -17,5 +18,8 @@
         "psr-4": {
             "srt4rulez\\": "src/"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
