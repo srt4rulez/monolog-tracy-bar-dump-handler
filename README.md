@@ -2,6 +2,85 @@
 
 Monolog handler that logs to Tracy's barDump method.
 
+## Getting Started
+
+Install via composer:
+
+```
+composer require srt4rulez/monolog-tracy-bar-dump-handler
+```
+
+Then, add the handler to your monolog logger:
+
+```php
+<?php
+
+use Monolog\Logger;
+use srt4rulez\TracyBarDumpHandler;
+
+$logger = new Logger('name');
+
+$logger->pushHandler(new TracyBarDumpHandler());
+
+$logger->debug('BarDump Header', [
+    'foo' => 'bar',
+]);
+```
+
+You may want to limit this handler to debug level only, with monolog's FilterHandler:
+
+```php
+<?php
+
+use Monolog\Logger;
+use Monolog\Handler\FilterHandler;
+use srt4rulez\TracyBarDumpHandler;
+
+$logger = new Logger('name');
+
+// Only use the tracy bar dump handler with debug level.
+$logger->pushHandler(new FilterHandler(new TracyBarDumpHandler(), [Logger::DEBUG, Logger::DEBUG]));
+
+$logger->debug('BarDump Header', [
+    'foo' => 'bar',
+]);
+```
+
+The 3rd parameter to TracyBarDumpHandler is an options array passed to Tracy\Debugger::barDump():
+
+```php
+<?php
+
+use Monolog\Logger;
+use srt4rulez\TracyBarDumpHandler;
+
+$logger = new Logger('name');
+
+$logger->pushHandler(new TracyBarDumpHandler(Logger::DEBUG, true, [
+    'depth' => 10,
+]));
+
+$logger->debug('BarDump Header', [
+    'some' => [
+        'deep' => [
+            'array' => [
+                'foo' => [
+                    'bar' => [
+                        'bar' => [],
+                    ]
+                ]
+            ]
+        ]
+    ],
+]);
+```
+
+See https://github.com/nette/tracy for more info.
+
+## License
+
+MIT
+
 ## Development Testing with Composer
 
 Run the following commands on the application you want to test this composer package on:
@@ -19,4 +98,4 @@ composer require srt4rulez/monolog-tracy-bar-dump-handler @dev
 
 You can now make changes to this repo while using it as composer package in another git repo!
 
-NOTE: Make sure you don't commit these changes to your git repo. 
+NOTE: Make sure you don't commit these changes to your git repo.
