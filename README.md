@@ -27,7 +27,7 @@ $logger->debug('BarDump Header', [
 ]);
 ```
 
-![Tracy BarDump](/assets/monolog-tracy-bar-dump.png?raw=true)
+![Tracy BarDump](https://github.com/srt4rulez/monolog-tracy-bar-dump-handler/blob/master/assets/monolog-tracy-bar-dump.png?raw=true)
 
 You may want to limit this handler to debug level only, with monolog's FilterHandler:
 
