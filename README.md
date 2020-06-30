@@ -1,8 +1,8 @@
 # monolog-tracy-bar-dump-handler
 
-![Packagist Version](https://img.shields.io/packagist/v/srt4rulez/monolog-tracy-bar-dump-handler?style=flat-square)
-![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/srt4rulez/monolog-tracy-bar-dump-handler?style=flat-square)
-![GitHub](https://img.shields.io/github/license/srt4rulez/monolog-tracy-bar-dump-handler?style=flat-square)
+[![Latest Stable Version](https://poser.pugx.org/srt4rulez/monolog-tracy-bar-dump-handler/v)](//packagist.org/packages/srt4rulez/monolog-tracy-bar-dump-handler)
+[![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/srt4rulez/monolog-tracy-bar-dump-handler)](https://php.net/)
+[![License](https://poser.pugx.org/srt4rulez/monolog-tracy-bar-dump-handler/license)](//packagist.org/packages/srt4rulez/monolog-tracy-bar-dump-handler)
 
 
 Monolog handler that logs to Tracy's barDump method.
